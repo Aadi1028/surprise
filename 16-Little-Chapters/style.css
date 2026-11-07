@@ -1,0 +1,403 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background: #faf7f2;
+    color: #38332f;
+    padding: 40px 20px;
+}
+
+.chapters-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #9b8270;
+    margin-bottom: 15px;
+}
+
+.page-header h1 {
+    font-size: clamp(34px, 6vw, 52px);
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: #84776d;
+    line-height: 1.6;
+}
+
+.chapters-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.chapter-card {
+    min-height: 170px;
+    padding: 20px 12px;
+    background: #fffdf9;
+    border: 1px solid #e9dfd4;
+    border-radius: 14px;
+    text-decoration: none;
+    color: inherit;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.chapter-card:hover {
+    transform: translateY(-4px);
+    border-color: #cdb8a5;
+    box-shadow: 0 8px 22px rgba(75, 55, 40, 0.08);
+}
+
+.chapter-number {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #a08b78;
+}
+
+.chapter-title {
+    font-size: 19px;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.chapter-animal {
+    font-size: 27px;
+    line-height: 1;
+}
+
+.page-footer {
+    text-align: center;
+    margin-top: 38px;
+    color: #938477;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 30px 15px;
+    }
+
+    .chapters-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .chapter-card {
+        min-height: 145px;
+        padding: 16px 10px;
+    }
+
+    .chapter-title {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 350px) {
+    .chapters-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.message-card {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 35px;
+    background: #fffdf9;
+    border: 1px solid #e9dfd4;
+    border-radius: 14px;
+    font-size: 18px;
+    line-height: 1.9;
+    white-space: pre-line;
+}
+
+.message-card p {
+    margin-bottom: 18px;
+}
+
+.message-card p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 600px) {
+    .message-card {
+        padding: 24px 20px;
+        font-size: 17px;
+    }
+}
+
+/* =================================
+   WELCOME PAGE — 16 LITTLE CHAPTERS
+================================= */
+
+.welcome-page {
+    min-height: 100vh;
+    margin: 0;
+    padding: 30px 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            #fffdf9 0%,
+            #f7f0e8 65%,
+            #eee4d9 100%
+        );
+
+    color: #443a33;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+/* Main welcome card */
+
+.welcome-page .welcome-card {
+    width: 100%;
+    max-width: 760px;
+    min-height: 520px;
+    padding: 65px 55px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 253, 249, 0.94);
+    border: 1px solid #e9ddd0;
+    border-radius: 5px;
+
+    box-shadow:
+        0 20px 60px rgba(83, 62, 43, 0.08),
+        0 3px 10px rgba(83, 62, 43, 0.03);
+
+    position: relative;
+}
+
+/* Decorative inner border */
+
+.welcome-page .welcome-card::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid #eee4d9;
+    pointer-events: none;
+}
+
+.welcome-content {
+    width: 100%;
+    max-width: 530px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+/* Small heading */
+
+.welcome-page .eyebrow {
+    margin: 0 0 28px;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 4px;
+    line-height: 1.8;
+
+    color: #a18a76;
+}
+
+/* Decoration */
+
+.welcome-page .small-decoration {
+    margin-bottom: 16px;
+    color: #b99b7b;
+    font-size: 22px;
+}
+
+/* Main title */
+
+.welcome-page h1 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 6vw, 58px);
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+
+    color: #44372f;
+}
+
+/* Introductory text */
+
+.welcome-page .intro {
+    max-width: 440px;
+    margin: 22px auto 0;
+
+    font-size: 17px;
+    line-height: 1.8;
+
+    color: #817266;
+}
+
+/* Divider */
+
+.welcome-page .divider {
+    margin: 35px auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    color: #b69a7b;
+    font-size: 15px;
+}
+
+.welcome-page .divider span {
+    display: block;
+    width: 55px;
+    height: 1px;
+    background: #e4d6c7;
+}
+
+/* Main message */
+
+.welcome-page .message {
+    max-width: 420px;
+    margin: 0 auto;
+
+    font-size: 17px;
+    line-height: 2;
+
+    color: #66594f;
+}
+
+/* Begin journey button */
+
+.welcome-page .primary-link {
+    width: 235px;
+    min-height: 54px;
+    margin: 38px auto 0;
+    padding: 0 22px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+
+    background: #796653;
+    border: 1px solid #796653;
+    border-radius: 3px;
+
+    color: #fffdf9;
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.7px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.welcome-page .primary-link:hover {
+    background: #62503f;
+    border-color: #62503f;
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 18px rgba(75, 55, 40, 0.15);
+}
+
+.welcome-page .button-arrow {
+    font-size: 19px;
+    transition: transform 0.25s ease;
+}
+
+.welcome-page .primary-link:hover .button-arrow {
+    transform: translateX(4px);
+}
+
+/* Footer */
+
+.welcome-page .footer-note {
+    margin: 30px 0 0;
+
+    font-size: 12px;
+    letter-spacing: 0.5px;
+
+    color: #a39385;
+}
+
+/* Mobile layout */
+
+@media (max-width: 600px) {
+
+    .welcome-page {
+        padding: 20px 14px;
+    }
+
+    .welcome-page .welcome-card {
+        min-height: 540px;
+        padding: 55px 25px;
+    }
+
+    .welcome-page .eyebrow {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .welcome-page h1 {
+        font-size: 39px;
+    }
+
+    .welcome-page .intro {
+        font-size: 15px;
+    }
+
+    .welcome-page .message {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    .welcome-page .primary-link {
+        width: 220px;
+    }
+}
